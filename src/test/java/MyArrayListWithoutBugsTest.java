@@ -2,14 +2,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class MyArrayListWithBugsTest {
-
-    private MyArrayListWithBugs arrayList;
+public class MyArrayListWithoutBugsTest {
+    private MyArrayListWithoutBugs arrayList;
 
     // TC001
     @Before
     public void setUp() {
-        this.arrayList = new MyArrayListWithBugs();
+        this.arrayList = new MyArrayListWithoutBugs();
         Assert.assertEquals(0, this.arrayList.size());
     }
 
