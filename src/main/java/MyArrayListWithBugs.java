@@ -32,16 +32,17 @@ public class MyArrayListWithBugs {
     // Inserts object at position index
     // Throws IndexOutOfBoundsException
     public void add(int index, Object o) {
-        if (index < 0 || nextFree < index)
+        if (index < 0 || nextFree <= index)
             throw new IndexOutOfBoundsException("Error (add): Invalid index" + index);
         // check capacity
         if (list.length <= nextFree)
             list = getLongerList();
         // Shift elements upwards to make position index free // Start with last element and move backwards
-        for (int i = nextFree - 1; i > index; i--) {
+        for (int i = nextFree; i > index; i--) {
             list[i] = list[i - 1];
         }
         list[index] = o;
+        nextFree++;
     }
 
     // Removes object at position index
