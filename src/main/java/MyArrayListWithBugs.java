@@ -24,7 +24,7 @@ public class MyArrayListWithBugs {
 
     // Returns a reference to the object at position index // Throws IndexOutOfBoundsException
     public Object get(int index) {
-        if (index <= 0 || nextFree < index)
+        if (index < 0 || nextFree < index)
             throw new IndexOutOfBoundsException("Error (get): Invalid index" + index);
         return list[index];
     }
